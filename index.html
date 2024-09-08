@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Параметры экрана</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            min-height: 80vh;
+            font-family: sans-serif;
+            font-size: 24px;
+            
+        }
+        .screen-info {
+            border: 1px solid grey;
+            border-radius: 3px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p id="screen-info" class="screen-info"></p>
+    </div>
+    
+    <script>
+        // Получаем параметры экрана
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        const screenColorDepth = window.screen.colorDepth;
+        const screenPixelDepth = window.screen.pixelDepth;
+
+
+        // Отображаем параметры на веб-странице
+        const screenInfoElement = document.getElementById('screen-info');
+        screenInfoElement.innerHTML = `
+            width: <b>${screenWidth}px</b><br>
+            height: <b>${screenHeight}px</b><br>
+        `;
+    </script>
+</body>
+</html>
